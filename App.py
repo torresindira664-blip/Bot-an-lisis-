@@ -11,6 +11,8 @@ if consulta:
     resultado = analizar_tema(consulta)
 
     st.subheader("📊 Resultado del análisis")
+    st.write("### 🏷️ Categoría")
+st.write(resultado["categoria"])
 
     st.write("### 📌 Resumen")
     st.write(resultado["resumen"])
