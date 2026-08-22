@@ -1,61 +1,67 @@
 def analizar_tema(tema):
+    tema_original = tema
     tema = tema.lower()
 
-    if "ropa" in tema or "moda" in tema:
-        categoria = "Mercado de moda y productos"
+    if "ropa" in tema or "moda" in tema or "infantil" in tema:
+        categoria = "Mercado de ropa y moda infantil"
+        resumen = "Análisis enfocado en productos de moda para niños."
         tendencias = [
             "Compras por redes sociales",
-            "Personalización de productos",
-            "Mayor interés por marcas con identidad"
+            "Diseños personalizados",
+            "Preferencia por marcas con identidad"
         ]
         riesgos = [
             "Alta competencia",
-            "Cambios rápidos en gustos del consumidor"
+            "Cambios en gustos de los clientes"
         ]
-        recomendacion = "Analizar clientes ideales y diferenciar la marca."
+        recomendacion = "Crear una propuesta diferente y conocer bien al cliente ideal."
 
     elif "curso" in tema or "educacion" in tema:
-        categoria = "Mercado de educación digital"
+        categoria = "Educación digital"
+        resumen = "Análisis del mercado de cursos y aprendizaje online."
         tendencias = [
-            "Crecimiento del aprendizaje online",
-            "Contenido especializado",
-            "Comunidades de aprendizaje"
+            "Mayor interés por aprender desde internet",
+            "Cursos especializados",
+            "Comunidades digitales"
         ]
         riesgos = [
-            "Mucha oferta de cursos",
-            "Necesidad de generar confianza"
+            "Mucha competencia",
+            "Necesidad de demostrar experiencia"
         ]
-        recomendacion = "Crear contenido de valor y una propuesta diferente."
+        recomendacion = "Crear contenido útil y diferenciar la oferta."
 
-    elif "negocio" in tema or "empresa" in tema:
-        categoria = "Análisis de negocio"
+    elif "negocio" in tema or "empresa" in tema or "online" in tema:
+        categoria = "Análisis de negocio online"
+        resumen = "Análisis de oportunidades en negocios digitales."
         tendencias = [
-            "Digitalización de servicios",
             "Ventas por internet",
+            "Uso de redes sociales",
             "Automatización de procesos"
         ]
         riesgos = [
             "Competencia creciente",
-            "Mala planificación"
+            "Falta de planificación"
         ]
-        recomendacion = "Validar la idea antes de invertir recursos."
+        recomendacion = "Validar la idea antes de invertir."
 
     else:
         categoria = "Análisis general"
+        resumen = "Análisis inicial del tema indicado."
         tendencias = [
             "Cambios del mercado",
             "Nuevas oportunidades",
             "Comportamiento de usuarios"
         ]
         riesgos = [
-            "Falta de información específica",
+            "Información limitada",
             "Cambios en la demanda"
         ]
-        recomendacion = "Investigar más datos sobre el tema."
+        recomendacion = "Investigar más información antes de decidir."
 
     return {
+        "tema": tema_original,
         "categoria": categoria,
-        "resumen": f"Análisis inicial sobre {tema}.",
+        "resumen": resumen,
         "tendencias": tendencias,
         "riesgos": riesgos,
         "recomendacion": recomendacion
