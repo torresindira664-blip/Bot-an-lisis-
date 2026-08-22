@@ -25,6 +25,13 @@ def guardar_analisis(resultado):
         json.dump(historial, archivo, indent=4, ensure_ascii=False)
 
 
+def cargar_historial():
+    if os.path.exists(ARCHIVO_HISTORIAL):
+        with open(ARCHIVO_HISTORIAL, "r", encoding="utf-8") as archivo:
+            return json.load(archivo)
+    return []
+
+
 st.title("🤖 Bot de Análisis")
 
 st.write("Escribe un tema y el bot generará un análisis.")
@@ -57,3 +64,20 @@ if consulta:
 
     st.write("### 💡 Recomendación")
     st.write(resultado["recomendacion"])
+
+
+st.divider()
+
+st.subheader("📚 Historial de análisis")
+
+historial = cargar_historial()
+
+if historial:
+    for analisis in reversed(historial):
+        st.write("---")
+        st.write("📅 Fecha:", analisis["fecha"])
+        st.write("🔎 Tema:", analisis["tema"])
+        st.write("🏷️ Categoría:", analisis["categoria"])
+        st.write("⭐ Puntuación:", str(analisis["puntuacion"]) + "/100")
+else:
+    st.write("Aún no hay análisis guardados.")
