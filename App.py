@@ -14,6 +14,8 @@ if consulta:
 
     st.write("### 🏷️ Categoría")
     st.write(resultado["categoria"])
+    st.write("### ⭐ Puntuación de oportunidad")
+st.write(str(resultado["puntuacion"]) + "/100")
 
     st.write("### 📌 Resumen")
     st.write(resultado["resumen"])
