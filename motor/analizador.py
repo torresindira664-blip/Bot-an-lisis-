@@ -2,11 +2,9 @@ def analizar_tema(tema):
     tema_original = tema
     tema = tema.lower()
 
-    puntuacion = 50
-
     if "ropa" in tema or "moda" in tema or "infantil" in tema:
         categoria = "Mercado de ropa y moda infantil"
-        puntuacion += 20
+        puntuacion = 80
         resumen = "Análisis enfocado en productos de moda para niños."
         tendencias = [
             "Compras por redes sociales",
@@ -19,10 +17,10 @@ def analizar_tema(tema):
         ]
         recomendacion = "Diferenciar la marca y conocer al cliente ideal."
 
-    elif "curso" in tema or "educacion" in tema:
+    elif "curso" in tema or "cursos" in tema or "educacion" in tema or "educación" in tema:
         categoria = "Educación digital"
-        puntuacion += 25
-        resumen = "Análisis del mercado de formación online."
+        puntuacion = 85
+        resumen = "Análisis del mercado de cursos online."
         tendencias = [
             "Aprendizaje desde internet",
             "Cursos especializados",
@@ -32,11 +30,11 @@ def analizar_tema(tema):
             "Mucha competencia",
             "Necesidad de generar confianza"
         ]
-        recomendacion = "Crear contenido de valor y una propuesta única."
+        recomendacion = "Crear contenido de valor y una propuesta diferente."
 
     elif "negocio" in tema or "empresa" in tema or "online" in tema:
         categoria = "Negocio digital"
-        puntuacion += 15
+        puntuacion = 75
         resumen = "Análisis de oportunidades de negocio."
         tendencias = [
             "Ventas digitales",
@@ -45,12 +43,13 @@ def analizar_tema(tema):
         ]
         riesgos = [
             "Competencia creciente",
-            "Mala planificación"
+            "Falta de planificación"
         ]
         recomendacion = "Validar la idea y analizar el mercado."
 
     else:
         categoria = "Análisis general"
+        puntuacion = 50
         resumen = "Evaluación inicial del tema."
         tendencias = [
             "Cambios del mercado",
