@@ -4,10 +4,13 @@ import os
 from datetime import datetime
 from motor.analizador import analizar_tema
 
+CARPETA_DATOS = "datos"
 ARCHIVO_HISTORIAL = "datos/historial.json"
 
 
 def guardar_analisis(resultado):
+    os.makedirs(CARPETA_DATOS, exist_ok=True)
+
     if os.path.exists(ARCHIVO_HISTORIAL):
         with open(ARCHIVO_HISTORIAL, "r", encoding="utf-8") as archivo:
             historial = json.load(archivo)
