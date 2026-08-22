@@ -11,19 +11,20 @@ if consulta:
     resultado = analizar_tema(consulta)
 
     st.subheader("📊 Resultado del análisis")
+
     st.write("### 🏷️ Categoría")
-st.write(resultado["categoria"])
+    st.write(resultado["categoria"])
 
     st.write("### 📌 Resumen")
     st.write(resultado["resumen"])
 
     st.write("### 📈 Tendencias principales")
-    for tendencia in resultado["tendencias"]:
-        st.write("- " + tendencia)
+    for item in resultado["tendencias"]:
+        st.write("• " + item)
 
     st.write("### ⚠️ Posibles riesgos")
-    for riesgo in resultado["riesgos"]:
-        st.write("- " + riesgo)
+    for item in resultado["riesgos"]:
+        st.write("• " + item)
 
     st.write("### 💡 Recomendación")
     st.write(resultado["recomendacion"])
